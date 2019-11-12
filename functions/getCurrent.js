@@ -16,23 +16,13 @@ module.exports.handler = async event => {
     TableName: process.env.parking_area_current_table
   };
   var results = await ddb.getItem(params).promise();
-  const parking_area = [{
-    "WEST": 5
-  },
-  {
-    "NORTH": 3
-  },
-  {
-    "SOUTH": 2
-  }];
+
 
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        parking_area: parking_area,
-        total_space: '10',
-        results: results,
+        parking_area: results.parking_areas,
       },
       null,
       2
