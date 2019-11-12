@@ -18,7 +18,7 @@ module.exports.handler = async (event, context) => {
     statusCode: 200,
     body: JSON.stringify({
       name: results.Item.name,
-      parking_areas: results.Item.parking_areas.areas,
+      parking_areas: results.Item.parking_areas,
       total_space: 5
     })
   };
