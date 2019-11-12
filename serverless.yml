@@ -4,6 +4,11 @@ provider:
   name: aws
   runtime: nodejs10.x
   region: eu-west-1
+  stage: ${opt:stage}
+  stackTags:
+    PROJECT: ${self:service}
+    STAGE: ${self:provider.stage}
+    SERVICE: "40"
 
 plugins:
   - serverless-iam-roles-per-function
