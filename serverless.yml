@@ -15,10 +15,10 @@ plugins:
   - serverless-pseudo-parameters
 
 functions:
-  hello:
-    handler: functions/handler.hello
+  parking_area_current:
+    handler: functions/getCurrent.handler
     events:
-      - http: GET hello
+      - http: GET space/current
 
 resources:
   Resources:
