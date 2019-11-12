@@ -16,7 +16,11 @@ module.exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(results.Item)
+    body: JSON.stringify({
+      name: results.Item.name,
+      parking_areas: results.Item.parking_areas.areas,
+      total_space: 5
+    })
   };
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration

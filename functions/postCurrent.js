@@ -6,8 +6,8 @@ AWS.config.update({region: 'eu-west-1'});
 const ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
 module.exports.handler = async event => {
-
-
+  const requestBody = JSON.parse(event.body);
+  console.log(requestBody);
   var params = {
     Item: { // a map of attribute name to AttributeValue
     "name": {
