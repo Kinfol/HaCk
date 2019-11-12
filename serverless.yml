@@ -28,6 +28,19 @@ functions:
           - dynamodb:GetItem        
         Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/parking_area_current-${self:provider.stage}"
 
+  post_parking_area_current:
+    handler: functions/postCurrent.handler
+    events:
+      - http: POST space/current
+    environment:
+      parking_area_current_table: 
+        Ref: ParkingTable
+    iamRoleStatements:
+      - Effect: "Allow"        
+        Action:
+          - dynamodb:putItem        
+        Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/parking_area_current-${self:provider.stage}"
+
 resources:
   Resources:
     ParkingTable:
