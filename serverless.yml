@@ -28,9 +28,29 @@ provider:
 #  stage: dev
   region: eu-west-1
 
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-pseudo-parameters
 
 functions:
   hello:
     handler: functions/handler.hello
     events:
       - http: GET hello
+
+
+# resources:
+#   Resources:
+#     restaurantsTable:
+#       Type: AWS::DynamoDB::Table
+#       Properties:
+#         TableName: restaurants-${self:provider.stage}-${self:custom.name}
+#         AttributeDefinitions:
+#           - AttributeName: name
+#             AttributeType: S
+#         KeySchema:
+#           - AttributeName: name
+#             KeyType: HASH
+#         ProvisionedThroughput:
+#           ReadCapacityUnits: 1
+#           WriteCapacityUnits: 1

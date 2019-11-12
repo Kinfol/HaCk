@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Kinfol/HaCk/issues"
   },
-  "homepage": "https://github.com/Kinfol/HaCk#readme"
+  "homepage": "https://github.com/Kinfol/HaCk#readme",
+  "devDependencies": {
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "serverless-pseudo-parameters": "^2.5.0"
+  }
 }
