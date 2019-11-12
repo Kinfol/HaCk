@@ -14,12 +14,18 @@ module.exports.handler = async (event, context) => {
   };
   var results = await ddb.get(params).promise();
 
+  var total = 0;
+  results.Item.parking_areas.forEach(function(entry) {
+    console.log(entry);
+    total += entry.spaces; //May need to cast to int??
+});
+
   return {
     statusCode: 200,
     body: JSON.stringify({
       name: results.Item.name,
-      parking_areas: results.Item.parking_areas.areas,
-      total_space: 5
+      parking_areas: results.Item.parking_areas,
+      total_space: total
     })
   };
 
