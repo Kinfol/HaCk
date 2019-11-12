@@ -32,3 +32,5 @@ provider:
 functions:
   hello:
     handler: functions/handler.hello
+    events:
+      - http: GET hello
