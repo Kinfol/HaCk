@@ -16,6 +16,8 @@ module.exports.handler = async event => {
 
   var results = await ddb.put(params).promise();
 
+  
+  
   return {
     statusCode: 200
   };
