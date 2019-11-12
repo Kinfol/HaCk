@@ -7,7 +7,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient()
 let predict = [
   {
     "name": "morriston",
-    "time": "11./02",
+    "time": "2019-11-12T15:30:00",
     "parking_areas": [
         {
             "name": "NORTH",
@@ -27,7 +27,7 @@ let predict = [
   },
   {
     "name": "morriston",
-    "time": "11./02",
+    "time": "2019-11-12T15:00:00",
     "parking_areas": [
         {
             "name": "NORTH",
@@ -48,7 +48,7 @@ let predict = [
 ];
 
 const getTableName = async () => {
-  return `parking_area_predict-hack`
+  return `parking_area_prediction-hack`
 }
 
 const run = async () => {
