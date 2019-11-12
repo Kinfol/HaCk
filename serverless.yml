@@ -21,4 +21,15 @@ functions:
       - http: GET hello
 
 resources:
-  - ${file(resources/dynamodb-table.yml)}
+  Resources:
+    ParkingTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        TableName: parking_area_current-${self:provider.stage}
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
