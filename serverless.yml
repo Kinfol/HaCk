@@ -18,7 +18,7 @@ functions:
   parking_area_current:
     handler: functions/getCurrent.handler
     events:
-      - http: GET space/current
+      - http: GET space/current/{name}
     environment:
       parking_area_current_table: 
         Ref: ParkingTable

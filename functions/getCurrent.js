@@ -5,12 +5,13 @@ const AWS = require('aws-sdk');
 AWS.config.update({region: 'eu-west-1'});
 const ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
-module.exports.handler = async event => {
+module.exports.handler = async (event, context) => {
+  console.log(event);
 
   var params = {
     Key: {
      "name": {
-       S: "morriston2"
+       S: event.pathParameters.name,
       }
     }, 
     TableName: process.env.parking_area_current_table
