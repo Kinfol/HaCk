@@ -33,7 +33,7 @@ functions:
     events:
       - http: GET space/predict/{name}/{time}
     environment:
-      parking_area_current_table: 
+      parking_table: 
         Ref: parkingPredictTable
     iamRoleStatements:
       - Effect: "Allow"        
