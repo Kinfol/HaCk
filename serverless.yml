@@ -31,4 +31,4 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: functions/handler.hello
