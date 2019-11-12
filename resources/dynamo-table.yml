@@ -1,10 +1,9 @@
-resources:
   Resources:
     ParkingTable:
       Type: AWS::DynamoDB::Table
       BillingMode: PAY_PER_REQUEST
       Properties:
-        TableName: parking-${self:provider.stage}-${self:custom.name}
+        TableName: parking_area_current-${self:provider.stage}-${self:custom.name}
         AttributeDefinitions:
           - AttributeName: name
             AttributeType: S

@@ -21,4 +21,4 @@ functions:
       - http: GET hello
 
 resources:
-- ${file(resources/dynamodb-table.yml)}
+  - ${file(resources/dynamodb-table.yml)}
