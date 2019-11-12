@@ -10,23 +10,16 @@ module.exports.handler = async event => {
   var params = {
     Key: {
      "name": {
-       S: "morriston"
+       S: "morriston2"
       }
     }, 
     TableName: process.env.parking_area_current_table
   };
   var results = await ddb.getItem(params).promise();
 
-
   return {
     statusCode: 200,
-    body: JSON.stringify(
-      {
-        parking_area: results.parking_areas,
-      },
-      null,
-      2
-    ),
+    body: JSON.stringify(results.Item)
   };
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
