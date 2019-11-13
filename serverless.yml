@@ -78,7 +78,7 @@ resources:
           - AttributeName: time
             AttributeType: S
         KeySchema:
-          - AttributeName: name
-            KeyType: HASH
           - AttributeName: time
+            KeyType: HASH
+          - AttributeName: name
             KeyType: RANGE
